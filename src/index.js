@@ -3,10 +3,10 @@ module.exports = function check(str, bracketsConfig) {
   if (str.length % 2 !== 0) {
     return false;
   }
-  const open = bracketsConfig.map((pair) => pair[0]);
-  const close = bracketsConfig.map((pair) => pair[1]);
+  let open = bracketsConfig.map((pair) => pair[0]);
+  let close = bracketsConfig.map((pair) => pair[1]);
 
-  const relevant = bracketsConfig.reduce(
+  let relevant = bracketsConfig.reduce(
     (acc, [open, close]) => ({ ...acc, [close]: open }),
     {}
   );
